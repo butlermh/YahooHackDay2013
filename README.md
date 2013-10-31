@@ -9,7 +9,7 @@ Mirror the two open data websites to local disk
     wget -mk http://data.taipei.gov.tw
     wget -mk http://cloud.culture.tw/frontsite/opendata
 
-Unfortunately this only gets a small subset of the data.taipei.gov.tw data because they do not use the web architecture, instead relying on javascript on their site ... so we need other methods to get more data ... do a Google query in order to get a list of JSON resources. First we need to set .wgetrc so we look like a real browser:
+Unfortunately this only gets a small subset of the data.taipei.gov.tw data because they do not use the [web architecture](http://www.w3.org/DesignIssues/), instead relying on javascript on their site ... so we need other methods to get more data ... do a Google query in order to get a list of JSON resources. First we need to set .wgetrc so we look like a real browser:
 
     ## Local settings (for a user to set in his $HOME/.wgetrc).
     header = Accept-Language: en-us,en;q=0.5
