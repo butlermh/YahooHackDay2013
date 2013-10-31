@@ -34,6 +34,10 @@ Then crawl the URLs - these seems to throw a lot of 403 forbidden's like we are 
 
     wget -k -r -N -l 1 -nc --no-remove-listing -i download-clean.txt 
 
+Once we have done this then in *cloud.culture.tw* most of the data is stored in `cloud.culture.tw/frontsite/trans` in Excel, XML and JSON format while in *data.taipei.gov.tw* it is in `data.taipei.gov.tw/opendata/apply` either in the `file` directory for CSV or in the `json` directory for JSON. 
+
+
+
 
 
 
