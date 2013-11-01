@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Displaying a remote JSON DataSource in a DataTable</title>
+<body class="yui3-skin-sam">
+
+<h1>臺北市休閒城市公園</h1>
+
+<pre>
+分類及編號：休閒旅遊
+資料集描述：公園休憩環境、設施、綠美化植物等簡介
+主要欄位說明：公園名稱、內容、經度、緯度、分類、地址
+資料集類型： Raw Data 
+檔案格式：EXCEL
+檔案下載：http://data.taipei.gov.tw/opendata/apply/file/NjgzOTY1RjUtN0UyMy00MTM0LUFEQjEtOTlDNEZCMUVBNTE3
+資料介接：http://data.taipei.gov.tw/opendata/apply/json/NjgzOTY1RjUtN0UyMy00MTM0LUFEQjEtOTlDNEZCMUVBNTE3
+最後更新時間：2013/10/22
+資料集提供機關：臺北市政府工務局公園路燈工程管理處
+</pre>
+
+<h1>Taipei Leisure City Park</h1>
+
+<pre>
+Category and number: leisure travel 
+data set description: Park open environment, facilities, green landscaping plants Introduction 
+Major Field Description: Park name, content, longitude, latitude, classification, address 
+data set types: Raw Data 
+File Format: EXCEL 
+file download : http://data.taipei.gov.tw/opendata/apply/file/NjgzOTY1RjUtN0UyMy00MTM0LUFEQjEtOTlDNEZCMUVBNTE3
+data interfacing: http://data.taipei.gov.tw/opendata/apply/json/NjgzOTY1RjUtN0UyMy00MTM0LUFEQjEtOTlDNEZCMUVBNTE3
+Last Updated: 2013/10 / 22 
+data sets available: Department of Parks and Street Lights Works Project Management Office
+</pre>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', function (Y) {
+        var src = new Y.DataSource.IO({
+            source: '03.json'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+                {key: "stitle"}, 
+                {key: "xbody"}, 
+                {key: "GTag_latitude"}, 
+                {key: "GTag_longitude"}, 
+                {key: "category"}, 
+                {key: "xAddress"}, 
+                {key: "X"},
+                {key: "Y"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+                "stitle", 
+                "xbody", 
+                "GTag_latitude", 
+                "GTag_longitude", 
+                "category", 
+                "xAddress", 
+                "X",
+                "Y"
+        ] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load();
+    });
+</script>
+</body>

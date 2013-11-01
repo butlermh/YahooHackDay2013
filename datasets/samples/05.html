@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Displaying a remote JSON DataSource in a DataTable</title>
+<body class="yui3-skin-sam">
+
+<h1>臺北市-OK認證-旅館業</h1>
+
+<pre>
+分類及編號：公共資訊
+資料集描述：
+主要欄位說明：標題、Ok認證類別、連絡電話、交通資訊、顯示用地址、系統辨識用地址
+資料集類型： Raw Data 
+檔案格式：CSV
+檔案下載：http://data.taipei.gov.tw/opendata/apply/file/QTdBNEQ5NkQtQkM3MS00QUI2LUJENTctODI0QTM5MkIwMUZE
+資料介接：http://data.taipei.gov.tw/opendata/apply/json/QTdBNEQ5NkQtQkM3MS00QUI2LUJENTctODI0QTM5MkIwMUZE
+最後更新時間：2013/06/11
+資料集提供機關：臺北市政府衛生局
+</pre>
+
+<h1>Taipei-OK certification - Hotel Industry</h1>
+
+<pre>
+Classification and Code: Public Information 
+Data Set Description: 
+Major Field Description: Title, Ok certification classes, contact phones, traffic information display address, system identification with address 
+data set types: Raw Data 
+File Format: CSV 
+File Download: HTTP: / / data.taipei.gov.tw/opendata/apply/file/QTdBNEQ5NkQtQkM3MS00QUI2LUJENTctODI0QTM5MkIwMUZE
+data interfacing: http://data.taipei.gov.tw/opendata/apply/json/QTdBNEQ5NkQtQkM3MS00QUI2LUJENTctODI0QTM5MkIwMUZE
+Last Updated: 2013/06/11 
+Information set provides: Department of Health
+</pre>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', function (Y) {
+        var src = new Y.DataSource.IO({
+            source: '05.json'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+                {key: "name"}, 
+                {key: "certification_category"}, 
+                {key: "tel"}, 
+                {key: "traffic_info"}, 
+                {key: "display_addr"},
+                {key: "poi_addr"},
+                {key: "X"},
+                {key: "Y"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+                "name", 
+                "certification_category", 
+                "tel", 
+                "traffic_info", 
+                "display_addr",
+                "poi_addr",
+                "X",
+                "Y" 
+        ] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load();
+    });
+</script>
+</body>
