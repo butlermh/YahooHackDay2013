@@ -1,0 +1,23 @@
+臺北市市場
+
+分類及編號：休閒旅遊
+資料集描述：市集販賣內容簡介、座標(84)
+主要欄位說明：名稱、張貼日期、內容、建立日期、地址、經度、緯度
+資料集類型： Raw Data 
+檔案格式：CSV
+檔案下載：http://data.taipei.gov.tw/opendata/apply/file/RDU5NkRFQzktREQ0OS00OUE3LUFCRjYtQkYzN0I2NTYyN0JE
+資料介接：http://data.taipei.gov.tw/opendata/apply/json/RDU5NkRFQzktREQ0OS00OUE3LUFCRjYtQkYzN0I2NTYyN0JE
+最後更新時間：2013/10/07
+資料集提供機關：臺北市市場處
+
+Taipei market
+
+Category and number: leisure travel 
+data sets Description: Market Market Information, coordinates (84) 
+Major Field Description: name, date of posting, content, creation date, address, latitude, longitude 
+data set types: Raw Data 
+File Format: CSV 
+Download: http://data.taipei.gov.tw/opendata/apply/file/RDU5NkRFQzktREQ0OS00OUE3LUFCRjYtQkYzN0I2NTYyN0JE
+data interfacing: http://data.taipei.gov.tw/opendata/apply/json/RDU5NkRFQzktREQ0OS00OUE3LUFCRjYtQkYzN0I2NTYyN0JE
+Last update: 2013 / 10/07 
+data sets available: Department Marketing Division

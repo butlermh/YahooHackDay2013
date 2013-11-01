@@ -36,6 +36,45 @@ Then crawl the URLs - these seems to throw a lot of 403 forbidden's like we are 
 
 Once we have done this then in *cloud.culture.tw* most of the data is stored in `cloud.culture.tw/frontsite/trans` in Excel, XML and JSON format while in *data.taipei.gov.tw* it is in `data.taipei.gov.tw/opendata/apply` either in the `file` directory for CSV or in the `json` directory for JSON. 
 
+## Analyzing datasets
+
+Many of the datasets contain positional information. They seem to be derived from GIS shapefiles. Use grep to identify which files have positional information:
+
+    cd data.taipei.gov.tw/opendata/apply/json
+    remove any files smaller than 1KB, useless
+    grep "lat" * -l
+    cd data.taipei.gov.tw/opendata/apply/query
+    grep "lat" * -l
+
+This gives us datasets of:
+
+    (01) NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
+    Stores with bring your own cutlery Privileges Taipei location data
+    1.6MB
+
+    (02) MDk0RTRDNEUtMkUzNS00Qjc2LUJEQkItRjg0MkRDMEE4NjVC
+    Taipei public areas Complimentary wireless Internet hotspot location data
+    1.4 MB
+
+    (03) NjgzOTY1RjUtN0UyMy00MTM0LUFEQjEtOTlDNEZCMUVBNTE3
+    Taipei leisure city park locations
+    54.3 KB
+
+    (04) NjkxREYyRUQtODAwQi00OEY0LUEwOUMtQjdGQTdBNDVENkQz
+    Taipei pro Mountain Trail
+    24.9 KB
+
+    (05) QTdBNEQ5NkQtQkM3MS00QUI2LUJENTctODI0QTM5MkIwMUZE
+    Taipei OK certification - hotel industry
+    30.3 kb
+
+    (06) RDU5NkRFQzktREQ0OS00OUE3LUFCRjYtQkYzN0I2NTYyN0JE
+    Taipei market location
+    83.2 kb
+
+    
+
+
 
 
 

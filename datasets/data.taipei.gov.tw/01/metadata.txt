@@ -1,0 +1,23 @@
+臺北市自備餐具享優惠
+
+分類及編號：生活安全及品質
+資料集描述：臺北市自備餐具享優惠
+主要欄位說明：name(店家名稱)、district(行政區)、operationCategory(營業類型)、operationType(營業種類)、telephone(電話)、openingHours(營業時間)、address(營業地址)、discountPeriod(優惠起迄時間)、discountCategory(優惠類型)、discountCondition(優惠條件)、discountContent(優惠內容)、url(店家網址)、photo(店家照片)、longitude(經度)、latitude(緯度)
+資料集類型： Raw Data 
+檔案格式：CSV
+檔案下載：http://data.taipei.gov.tw/opendata/apply/file/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
+資料介接：http://data.taipei.gov.tw/opendata/apply/json/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
+最後更新時間：2013/01/24
+資料集提供機關：臺北市政府環境保護局
+
+Bring your own cutlery Privileges Taipei
+
+Category and number: the safety and quality of life 
+data sets Description: Bring your own cutlery Privileges Taipei 
+Main Field description: name (store name), district (SAR), operationCategory (open type), operationType (business category), telephone (telephone ), openingHours (business hours), address (business address), discountPeriod (preferential start and end time), discountCategory (preferential type), discountCondition (preferential conditions), discountContent (deals content), url (store URL), photo (store photos ), longitude (longitude), latitude (lat) 
+data set types: Raw Data 
+File Format: CSV 
+File Download: http://data.taipei.gov.tw/opendata/apply/file/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
+data interfacing: zh / data.taipei.gov.tw/opendata/apply/json/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
+Last Updated: 2013/01/24 
+dataset provides: Department of Environmental Protection Agency
