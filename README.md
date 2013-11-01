@@ -1,6 +1,20 @@
 # Yahoo Hack Day 2013 Notes
 
-## How to download datasets
+## Sources of open data
+
+ * http://developer.yahoo.com/yql/console/
+ * http://data.taipei.gov.tw
+ * http://cloud.culture.tw/frontsite/opendata
+ * http://dbpedia.org/
+ * http://linkedgeodata.org/
+ * http://www4.wiwiss.fu-berlin.de/factbook/
+ * http://www.freebase.com/
+ * http://musicbrainz.org/
+ * http://www4.wiwiss.fu-berlin.de/wikicompany/
+ * http://www.mpi-inf.mpg.de/yago-naga/yago/
+ * http://www.geonames.org/
+
+## How to download Taipei datasets
 
 Mirror the two open data websites to local disk
 

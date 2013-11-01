@@ -86,6 +86,7 @@ YUI().use("datatable", "datasource-jsonschema", "datatable-datasource", "dump", 
 
     dataSource.plug(Y.Plugin.DataSourceJSONSchema, {
         schema: {
+            resultListLocator: 'data',
             resultFields: [
                 "name", 
                 "district", 

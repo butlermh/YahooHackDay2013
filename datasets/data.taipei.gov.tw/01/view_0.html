@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<title>Displaying a remote JSON DataSource in a DataTable</title>
+<body class="yui3-skin-sam">
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-jsonschema', function (Y) {
+        var src = new Y.DataSource.Get({
+            source: 'http://data.taipei.gov.tw/opendata/apply/query/QzdFMzgwMzAtMkFEMS00MjBELUI4M0QtNDJGRjI2MDEyODAy?$format=json'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: 'data',
+            resultFields: [
+                { key:'status' }, 
+                { key:'address_code' }
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+            'status',
+            'address_code'
+        ] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load({ request: '?per_page=10' });
+    });
+</script>
+</body>
