@@ -1,0 +1,26 @@
+臺北市保護樹木
+
+分類及編號：休閒旅遊
+資料集描述：保護樹木
+主要欄位說明：樹種代碼、樹種名稱
+資料集類型： Service 
+檔案格式：XML
+資料介接：http://www.api.cloud.taipei.gov.tw/CSCP_API/dca/tre
+新版資料介接：http://data.taipei.gov.tw/opendata/apply/query/QjBFQ0I4QjItNEZBNi00OTJCLUE0NUMtQzQ0Mjc4RDUwRkUy?$format=json
+API說明文件：http://data.taipei.gov.tw/opendata/apply/sigDoc/dca-tre
+最後更新時間：2013/10/31
+資料集提供機關：臺北市政府文化局
+
+
+Taipei protect trees
+
+Category and number: leisure travel 
+data set description: Protect trees 
+major field descriptions: Species code, species name 
+data set types: Service 
+file formats: XML 
+data interfacing: http://www.api.cloud.taipei.gov.tw / CSCP_API / dca / tre
+new data interfacing: http://data.taipei.gov.tw/opendata/apply/query/QjBFQ0I4QjItNEZBNi00OTJCLUE0NUMtQzQ0Mjc4RDUwRkUy? $ format = JSON
+API Documentation: http://data.taipei.gov.tw / opendata / apply / sigDoc / dca-tre
+Last Updated: 2013/10/31 
+dataset provides: Department of Cultural Affairs

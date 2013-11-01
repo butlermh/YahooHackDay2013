@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Displaying a remote JSON DataSource in a DataTable</title>
+<body class="yui3-skin-sam">
+
+<h1>臺北市保護樹木</h1>
+
+<pre>
+分類及編號：休閒旅遊
+資料集描述：保護樹木
+主要欄位說明：樹種代碼、樹種名稱
+資料集類型： Service 
+檔案格式：XML
+資料介接：http://www.api.cloud.taipei.gov.tw/CSCP_API/dca/tre
+新版資料介接：http://data.taipei.gov.tw/opendata/apply/query/QjBFQ0I4QjItNEZBNi00OTJCLUE0NUMtQzQ0Mjc4RDUwRkUy?$format=json
+API說明文件：http://data.taipei.gov.tw/opendata/apply/sigDoc/dca-tre
+最後更新時間：2013/10/31
+資料集提供機關：臺北市政府文化局
+</pre>
+
+<h1>Taipei protect trees</h1>
+
+<pre>
+Category and number: leisure travel 
+data set description: Protect trees 
+major field descriptions: Species code, species name 
+data set types: Service 
+file formats: XML 
+data interfacing: http://www.api.cloud.taipei.gov.tw / CSCP_API / dca / tre
+new data interfacing: http://data.taipei.gov.tw/opendata/apply/query/QjBFQ0I4QjItNEZBNi00OTJCLUE0NUMtQzQ0Mjc4RDUwRkUy? $ format = JSON
+API Documentation: http://data.taipei.gov.tw / opendata / apply / sigDoc / dca-tre
+Last Updated: 2013/10/31 
+dataset provides: Department of Cultural Affairs
+</pre>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', function (Y) {
+        var src = new Y.DataSource.IO({
+            source: '07.json'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+              {key: "tree_serial_no"}, 
+              {key: "old_tree_serial_no"},
+              {key: "treea_addr"},
+             {key: "type_name"},
+            {key: "type_eng_name"},
+            {key: "admin_dept"},
+            {key: "tree_height"},
+            {key: "tree_source"},
+            {key: "expect_tree_age"},
+            {key: "tree_model"},
+            {key: "tree_chest"},
+            {key: "treed_diameter"},
+            {key: "character_name"},
+            {key: "position_name"},
+            {key: "backgroud"},
+            {key: "page_url"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+              "tree_serial_no", 
+              "old_tree_serial_no",
+              "treea_addr",
+             "type_name",
+            "type_eng_name",
+            "admin_dept",
+            "tree_height",
+            "tree_source",
+            "expect_tree_age",
+            "tree_model",
+            "tree_chest",
+            "treed_diameter",
+            "character_name",
+            "position_name",
+            "backgroud",
+            "page_url"
+        ] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load();
+    });
+</script>
+</body>

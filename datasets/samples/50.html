@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Displaying a remote JSON DataSource in a DataTable</title>
+<body class="yui3-skin-sam">
+
+<h1>Culture map</h1>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', function (Y) {
+        var src = new Y.DataSource.IO({
+            source: '50.json'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+               {key: "name"},
+                {key: "intro"},
+                {key: "address"},
+                {key: "longitude"},
+                {key: "latitude"},
+                {key: "openTime"},
+                {key: "closeDay"},
+                {key: "ticketPrice"},
+                {key: "contact"},
+                {key: "phone"},
+                {key: "email"},
+                {key: "website"},
+                {key: "arriveWay"},
+                {key: "headCityName"},
+                {key: "mainTypeName"},
+                {key: "cityName"},
+                {key: "groupTypeName"},
+                {key: "mainTypePk"},
+                {key: "version"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+               "name",
+                "intro",
+                "address",
+                "longitude",
+                "latitude",
+                "openTime",
+                "closeDay",
+                "ticketPrice",
+                "contact",
+                "phone",
+                "email",
+                "website",
+                "arriveWay",
+                "headCityName",
+                "mainTypeName",
+                "cityName",
+                "groupTypeName",
+                "mainTypePk",
+                "version"
+        ] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load();
+    });
+</script>
+</body>
