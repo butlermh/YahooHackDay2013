@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Displaying a remote JSON DataSource in a DataTable</title>
+<body class="yui3-skin-sam">
+
+<h1>臺北市公眾區免費無線上網熱點資料</h1>
+
+<pre>
+分類及編號：交通及通訊
+資料集描述：臺北市臺北公眾區免費無線上網(Taipei Free)熱點資料
+主要欄位說明：熱點名稱、類別、地址、熱點類別、經度、緯度
+資料集類型： Raw Data 
+檔案格式：CSV
+檔案下載：http://data.taipei.gov.tw/opendata/apply/file/MDk0RTRDNEUtMkUzNS00Qjc2LUJEQkItRjg0MkRDMEE4NjVC
+資料介接：http://data.taipei.gov.tw/opendata/apply/json/MDk0RTRDNEUtMkUzNS00Qjc2LUJEQkItRjg0MkRDMEE4NjVC
+API說明文件：http://data.taipei.gov.tw/opendata/apply/doc/MDk0RTRDNEUtMkUzNS00Qjc2LUJEQkItRjg0MkRDMEE4NjVC
+最後更新時間：2013/03/13
+資料集提供機關：臺北市政府資訊局
+</pre>
+
+<h1>Taipei public areas Complimentary wireless Internet hotspot data</h1>
+
+<pre>
+Classification and Code: Transport and communications 
+data set description: Taipei Taipei public areas Complimentary wireless Internet access (Taipei Free) hotspot data 
+key fields Description: hot name, category, address, hot category, longitude, latitude 
+data set types: Raw Data 
+Files Format: CSV 
+File Download: http://data.taipei.gov.tw/opendata/apply/file/MDk0RTRDNEUtMkUzNS00Qjc2LUJEQkItRjg0MkRDMEE4NjVC
+data interfacing: http://data.taipei.gov.tw/opendata/apply/json/MDk0RTRDNEUtMkUzNS00Qjc2LUJEQkItRjg0MkRDMEE4NjVC
+API Description File: http://data.taipei.gov.tw/opendata/apply/doc/MDk0RTRDNEUtMkUzNS00Qjc2LUJEQkItRjg0MkRDMEE4NjVC
+Last Updated: 2013/03/13 
+dataset provides: Taipei City Government Information Bureau
+</pre>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', function (Y) {
+        var src = new Y.DataSource.IO({
+            source: '02.json'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+                {key: "hotspot_name"}, 
+                {key: "area"}, 
+                {key: "address"}, 
+                {key: "hotspot_type"}, 
+                {key: "lng"}, 
+                {key: "lat"}, 
+                {key: "X"},
+                {key: "Y"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+                "hotspot_name", 
+                "area", 
+                "address", 
+                "hotspot_type", 
+                "lng", 
+                "lat", 
+                "X",
+                "Y"
+        ] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load();
+    });
+</script>
+</body>
