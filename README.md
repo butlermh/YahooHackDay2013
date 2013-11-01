@@ -86,6 +86,21 @@ This gives us datasets of:
     Taipei market location
     83.2 kb
 
+###
+
+Next steps is to make some simple "Hello World" pages that demonstrate different datasets being displayed in YUI.
+
+I had some problems with this .. I can't get the samples to work from the `taipei.gov.tw` server. 
+
+Instead you need to go to datasets/samples then start a web server e.g. 
+
+    python -m SimpleHTTPServer
+
+then open
+
+    http://localhost:8000/index.html
+
+Note it takes some time for the data sets to render ...
     
 
 

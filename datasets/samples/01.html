@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Displaying a remote JSON DataSource in a DataTable</title>
+<body class="yui3-skin-sam">
+
+<h1>臺北市自備餐具享優惠</h1>
+
+<pre>
+分類及編號：生活安全及品質
+資料集描述：臺北市自備餐具享優惠
+資料集類型： Raw Data 
+檔案格式：CSV
+檔案下載：http://data.taipei.gov.tw/opendata/apply/file/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
+資料介接：http://data.taipei.gov.tw/opendata/apply/json/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
+最後更新時間：2013/01/24
+資料集提供機關：臺北市政府環境保護局
+</pre>
+
+<h1>Bring your own cutlery privileges Taipei</h1>
+
+<pre>Category and number: the safety and quality of life 
+data sets Description: Bring your own cutlery Privileges Taipei 
+data set types: Raw Data 
+File Format: CSV 
+File Download: http://data.taipei.gov.tw/opendata/apply/file/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
+data interfacing: http://data.taipei.gov.tw/opendata/apply/json/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
+Last Updated: 2013/01/24 
+dataset provides: Department of Environmental Protection Agency</pre>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', function (Y) {
+        var src = new Y.DataSource.IO({
+            source: '01.json'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+                {key: "name"}, 
+                {key: "district"}, 
+                {key: "operationCategory"}, 
+                {key: "operationType"}, 
+                {key: "telephone"}, 
+                {key: "openingHours"}, 
+                {key: "address"}, 
+                {key: "discountPeriod"}, 
+                {key: "discountCategory"}, 
+                {key: "discountCondition"}, 
+                {key: "discountContent"}, 
+                {key: "url"}, 
+                {key: "photo"}, 
+                {key: "longitude"}, 
+                {key: "latitude"}, 
+                {key: "X"},
+                {key: "Y"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+                "name", 
+                "district", 
+                "operationCategory", 
+                "operationType", 
+                "telephone", 
+                "openingHours", 
+                "address", 
+                "discountPeriod", 
+                "discountCategory", 
+                "discountCondition", 
+                "discountContent", 
+                "url", 
+                "photo", 
+                "longitude", 
+                "latitude", 
+                "X",
+                "Y"
+        ] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load();
+    });
+</script>
+</body>
