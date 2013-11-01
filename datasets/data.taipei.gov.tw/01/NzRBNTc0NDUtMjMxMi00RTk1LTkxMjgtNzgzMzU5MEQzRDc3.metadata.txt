@@ -21,3 +21,25 @@ File Download: http://data.taipei.gov.tw/opendata/apply/file/NzRBNTc0NDUtMjMxMi0
 data interfacing: zh / data.taipei.gov.tw/opendata/apply/json/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3
 Last Updated: 2013/01/24 
 dataset provides: Department of Environmental Protection Agency
+
+[
+    {
+        "name": "Mr.wish(通化直營店)",
+        "district": "大安區",
+        "operationCategory": "飲料店",
+        "operationType": "餐飲類",
+        "telephone": "02-2377-8688",
+        "openingHours": "11:00-22:00",
+        "address": "台北市大安區通化街72號",
+        "discountPeriod": "2011/05/1起",
+        "discountCategory": "折價",
+        "discountCondition": "自備飲料杯",
+        "discountContent": "650ml(含)以上折價2元，以下折價1元",
+        "url": null,
+        "photo": null,
+        "longitude": "121.554108",
+        "latitude": "25.030159",
+        "X": null,
+        "Y": null
+    }
+]
