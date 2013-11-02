@@ -1,0 +1,25 @@
+.navbar {
+  margin: 0;
+  background-color: #636363;
+  border-color: #636363; }
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #969696; }
+
+.jumbotron {
+  background-color: #303030;
+  min-height: 300px; }
+
+.container {
+  min-height: 20em; }
+  @media (min-width: 1200px) {
+    .container {
+      min-width: 1200px; } }
+
+.footer {
+  margin-top: 5em;
+  background-color: #b0b0b0;
+  min-height: 10em;
+  border-top: 1px solid #bcbcbc;
+  color: #969696;
+  padding: 1em 3em; }

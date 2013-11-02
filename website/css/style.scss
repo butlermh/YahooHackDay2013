@@ -1,0 +1,30 @@
+$main_color: #303030;
+.navbar {
+  margin: 0;
+  background-color: lighten($main_color, 20%);
+  border-color:  lighten($main_color, 20%);
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+  background-color: lighten($main_color, 40%);
+}
+
+.jumbotron {
+  background-color: $main_color;
+  min-height: 300px;
+}
+
+.container {
+  @media (min-width: 1200px) { 
+    min-width: 1200px;
+  }
+  min-height: 20em;
+}
+
+.footer {
+  margin-top: 5em;
+  background-color: lighten($main_color, 50%);
+  min-height: 10em;
+  border-top: 1px solid lighten($main_color, 55%);
+  color: lighten($main_color, 40%);
+  padding: 1em 3em;
+}
