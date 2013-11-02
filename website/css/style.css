@@ -8,17 +8,57 @@
 
 .jumbotron {
   background-color: #303030;
-  min-height: 300px; }
+  min-height: 300px;
+  margin: 0; }
+
+.caption {
+  background-color: #303030;
+  color: #ffffff;
+  padding: .5em;
+  margin-bottom: 2em; }
 
 .container {
+  padding: 0;
   min-height: 20em; }
+  @media (min-width: 1024px) {
+    .container {
+      width: 98%; } }
   @media (min-width: 1200px) {
     .container {
-      min-width: 1200px; } }
+      width: 98%; } }
+  .container .menu li {
+    transition: border .6s ease;
+    -moz-transition: border .6s ease;
+    -webkit-transition: border .6s ease;
+    padding: .5em .5em .5em 1.5em;
+    margin: .2em 1em 0 -1em;
+    border-left: 5px solid #ffffff; }
+  .container .menu li:hover {
+    background-color: #e3e3e3;
+    cursor: pointer; }
+  .container .menu .active {
+    border-left: 5px solid orange;
+    background-color: #f2f2f2; }
+  .container .main h3 {
+    color: #ffae1a; }
+  .container .main .gcontainer {
+    margin-bottom: 7em;
+    margin-left: 1em; }
+    .container .main .gcontainer .item {
+      margin: 0px;
+      padding: 10px;
+      min-height: 240px;
+      border: 3px solid #ffffff;
+      background: #efefef; }
+    .container .main .gcontainer .s1 {
+      min-width: 240px; }
+    .container .main .gcontainer .s2 {
+      min-width: 480px; }
 
 .footer {
+  clear: both;
   margin-top: 5em;
-  background-color: #b0b0b0;
+  background-color: #d6d6d6;
   min-height: 10em;
   border-top: 1px solid #bcbcbc;
   color: #969696;
