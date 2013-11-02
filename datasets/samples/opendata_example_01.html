@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>臺北市自備餐具享優惠</title>
+<body class="yui3-skin-sam">
+
+<h1>臺北市自備餐具享優惠</h1>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', 'datatable-paginator', function (Y) {
+        var src = new Y.DataSource.Get({
+            source: 'http://json2jsonp.com/'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+                {key: "name"}, 
+                {key: "district"}, 
+                {key: "operationCategory"}, 
+                {key: "operationType"}, 
+                {key: "telephone"}, 
+                {key: "openingHours"}, 
+                {key: "address"}, 
+                {key: "discountPeriod"}, 
+                {key: "discountCategory"}, 
+                {key: "discountCondition"}, 
+                {key: "discountContent"}, 
+                {key: "longitude"}, 
+                {key: "latitude"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+                "name", 
+                "district", 
+                "operationCategory", 
+                "operationType", 
+                "telephone", 
+                "openingHours", 
+                "address", 
+                "discountPeriod", 
+                "discountCategory", 
+                "discountCondition", 
+                "discountContent", 
+                "longitude", 
+                "latitude"
+        ],
+        rowsPerPage: 10,
+        paginatorLocation: ['header', 'footer'] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load({request: '?url=http://data.taipei.gov.tw/opendata/apply/json/NzRBNTc0NDUtMjMxMi00RTk1LTkxMjgtNzgzMzU5MEQzRDc3'});
+    });
+</script>
+</body>
