@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Getting Data
-description: "Getting Data"
+title: Getting open data
+description: "Getting open data"
 modified: 2013-11-02
 category: articles
 comments: true

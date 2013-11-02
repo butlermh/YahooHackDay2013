@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Displaying open data with YUI
-description: "Displaying open data with YUI"
+title: Displaying open data
+description: "Displaying open data"
 modified: 2013-11-02
 category: articles
 comments: true
