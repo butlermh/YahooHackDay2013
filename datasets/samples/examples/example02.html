@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>臺北市自備餐具享優惠</title>
+<body class="yui3-skin-sam">
+
+<h1>臺北市-OK認證-旅館業</h1>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', 'datatable-paginator', function (Y) {
+        var src = new Y.DataSource.Get({
+            source: 'http://json2jsonp.com/'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+                {key: "name"}, 
+                {key: "certification_category"}, 
+                {key: "tel"}, 
+                {key: "traffic_info"}, 
+                {key: "display_addr"},
+                {key: "poi_addr"},
+                {key: "longitude", locator:"X"}, 
+                {key: "latitude", locator:"Y"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+                "name", 
+                "certification_category", 
+                "tel", 
+                "traffic_info", 
+                "display_addr",
+                "poi_addr",
+                "longitude",
+                "latitude" 
+        ], 
+        rowsPerPage: 10,
+        paginatorLocation: ['header', 'footer'] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load({request: '?url=http://data.taipei.gov.tw/opendata/apply/json/QTdBNEQ5NkQtQkM3MS00QUI2LUJENTctODI0QTM5MkIwMUZE'});
+    });
+</script>
+</body>
