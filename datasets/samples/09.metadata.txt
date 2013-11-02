@@ -1,0 +1,23 @@
+臺北市臺北旅遊網-景點資料(中文)
+
+分類及編號：休閒旅遊
+資料集描述：臺北旅遊網-景點資料
+主要欄位說明：景點代碼、景點名稱、內容、地址、景點圖片、經緯度、發布機關
+資料集類型： Service 
+檔案格式：
+資料介接：http://www.api.cloud.taipei.gov.tw/CSCP_API/etm/trv
+新版資料介接：http://data.taipei.gov.tw/opendata/apply/query/MzVERDUyOTItNjI1NC00NjcyLUE3OEItNDY3ODhDMURFM0Yy?$format=json
+最後更新時間：2013/02/07
+資料集提供機關：臺北市政府觀光傳播局
+
+Taipei Taipei Travel Net - Attractions Information (Chinese)
+
+Category and number: leisure travel 
+data set description: Taipei Travel Network - Attractions Information 
+Major Field Description: Attractions code, interest, content, address, attractions pictures, latitude and longitude, authorities released 
+data set types: Service 
+File Format: 
+Data interfacing: http://www.api.cloud.taipei.gov.tw/CSCP_API/etm/trv
+new data interfacing: http://data.taipei.gov.tw/opendata/apply/query/MzVERDUyOTItNjI1NC00NjcyLUE3OEItNDY3ODhDMURFM0Yy? $ format = JSON
+Last Updated: 2013/02/07 
+dataset provides: Department of Information and Tourism

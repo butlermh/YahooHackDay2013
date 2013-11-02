@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Displaying a remote JSON DataSource in a DataTable</title>
+<body class="yui3-skin-sam">
+
+<h1>臺北市臺北旅遊網-景點資料(中文)</h1>
+
+<pre>
+分類及編號：休閒旅遊
+資料集描述：臺北旅遊網-景點資料
+主要欄位說明：景點代碼、景點名稱、內容、地址、景點圖片、經緯度、發布機關
+資料集類型： Service 
+檔案格式：
+資料介接：http://www.api.cloud.taipei.gov.tw/CSCP_API/etm/trv
+新版資料介接：http://data.taipei.gov.tw/opendata/apply/query/MzVERDUyOTItNjI1NC00NjcyLUE3OEItNDY3ODhDMURFM0Yy?$format=json
+最後更新時間：2013/02/07
+資料集提供機關：臺北市政府觀光傳播局
+</pre>
+
+<h1>Taipei Taipei Travel Net - Attractions Information (Chinese)</h1>
+
+<pre>
+Category and number: leisure travel 
+data set description: Taipei Travel Network - Attractions Information 
+Major Field Description: Attractions code, interest, content, address, attractions pictures, latitude and longitude, authorities released 
+data set types: Service 
+File Format: 
+Data interfacing: http://www.api.cloud.taipei.gov.tw/CSCP_API/etm/trv
+new data interfacing: http://data.taipei.gov.tw/opendata/apply/query/MzVERDUyOTItNjI1NC00NjcyLUE3OEItNDY3ODhDMURFM0Yy? $ format = JSON
+Last Updated: 2013/02/07 
+dataset provides: Department of Information and Tourism
+</pre>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', function (Y) {
+        var src = new Y.DataSource.IO({
+            source: '09.json'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+        {key: "rownumber"},
+    {key: "ref_wp"},
+    {key: "cat1"},
+    {key: "cat2"},
+    {key: "serial_no"},
+    {key: "memo_tel"},
+    {key: "memo_fax"},
+    {key: "memo_cost"},
+    {key: "memo_time"},
+    {key: "stitle"},
+    {key: "xbody"},
+    {key: "avbegin"},
+    {key: "avend"},
+    {key: "idpt"},
+    {key: "xurl"},
+    {key: "address"},
+    {key: "xpostdate"},
+    {key: "langinfo"},
+    {key: "poi"},
+    {key: "info"},
+    {key: "longitude"},
+    {key: "latitude"},
+    {key: "mrt"},
+    {key: "servicetype"},
+    {key: "file"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+    "rownumber",
+    "ref_wp",
+    "cat1",
+    "cat2",
+    "serial_no",
+    "memo_tel",
+    "memo_fax",
+    "memo_cost",
+    "memo_time",
+    "stitle",
+    "xbody",
+    "avbegin",
+    "avend",
+    "idpt",
+    "xurl",
+    "address",
+    "xpostdate",
+    "langinfo",
+    "poi",
+    "info",
+    "longitude",
+    "latitude",
+    "mrt",
+    "servicetype",
+    "file"
+        ] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load();
+    });
+</script>
+</body>
