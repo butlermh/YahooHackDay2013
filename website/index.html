@@ -4,6 +4,29 @@
     <title></title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script>
+      $(function(){
+        $(".gcontainer").isotope({
+          masonry: {
+            columnWidth: 240,
+          }
+        });
+        $(document).on('click', '.menu li', function(e) {
+          $('.menu li').removeClass('active');
+          $(e.currentTarget).addClass('active');
+        });
+        $(document).on('scroll', function() {
+          if ( $(this).scrollTop() > $('.main').position().top - $('nav').height() )
+            $('.menu').css({'top': ($(this).scrollTop() - $('.main').position().top + $('nav').height() * 2)+'px'});
+          else
+            $('.menu').css({'top': $('nav').height()+'px'});
+        });
+        $(document).scroll();
+      });
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -23,56 +46,62 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Link</a></li>
         <li><a href="#">Link</a></li>
-        <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-          <li class="divider"></li>
-          <li><a href="#">One more separated link</a></li>
-        </ul>
-        </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="input-group input-group-md">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
         <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User<b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
+          <li><a href="#">Preferences</a></li>
           <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
+          <li><a href="#">Logout</a></li>
         </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
     </nav>
     <div class="jumbotron"><h1>..</h1></div>
+    <div class="caption">blah blah blah</div>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">blah blah blah</div>
       </div>
       <div>
-        <div class="col-md-3">
-          <div class="row">a1</div>
-          <div class="row">a2</div>
-          <div class="row">a3</div>
-          <div class="row">a4</div>
-          <div class="row">a5</div>
-          <div class="row">a6</div>
+        <div class="col-md-2 menu">
+          <ul class="list-unstyled">
+            <li>a1</li>
+            <li>a2</li>
+            <li>a3</li>
+            <li>a4</li>
+            <li>a5</li>
+          </ul>
         </div>
-        <div class="col-md-9">
-          bbbbbbb
+        <div class="col-md-10 main row">
+          <div>
+            <h3>Newest</h3>
+            <div class="gcontainer">
+              <div class="item s2">1</div>
+              <div class="item s1">2</div>
+              <div class="item s1">3</div>
+              <div class="item s1">4</div>
+              <div class="item s1">5</div>
+              <div class="item s1">6</div>
+              <div class="item s2">7</div>
+            </div>
+          </div>
+          <div>
+            <h3>Hotest</h3>
+            <div class="gcontainer">
+              <div class="item s2">1</div>
+              <div class="item s1">2</div>
+              <div class="item s1">3</div>
+              <div class="item s1">4</div>
+              <div class="item s1">5</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
