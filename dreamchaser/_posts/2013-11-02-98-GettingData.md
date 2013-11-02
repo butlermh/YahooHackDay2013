@@ -32,20 +32,16 @@ referer=http://data.taipei.gov.tw/
 Now we can query Google programmatically to get a list of datasets at `data.taipei.gov.tw`: 
 
 {% highlight bash %}
-wget 'http://www.google.com/search?q=site:data.taipei.gov.tw+json&amp;num=100&amp;complete=0' 
-    --output-document download1.txt  
-wget 'http://www.google.com/search?q=site:data.taipei.gov.tw+json&amp;num=100&amp;complete=0&amp;start=100' 
-    --output-document download2.txt  
-wget 'http://www.google.com/search?q=site:data.taipei.gov.tw+csv&amp;num=100&amp;complete=0' 
-    --output-document download3.txt  
+wget 'http://www.google.com/search?q=site:data.taipei.gov.tw+json&amp;num=100&amp;complete=0' --output-document download1.txt  
+wget 'http://www.google.com/search?q=site:data.taipei.gov.tw+json&amp;num=100&amp;complete=0&amp;start=100' --output-document download2.txt  
+wget 'http://www.google.com/search?q=site:data.taipei.gov.tw+csv&amp;num=100&amp;complete=0' --output-document download3.txt  
 cat download1.txt download2.txt download3.txt > download.txt
 {% endhighlight %}   
 
 Next we do use some [quick and dirty regular expressions](http://www.codinghorror.com/blog/2009/11/parsing-html-the-cthulhu-way.html) in order to get a list of dataset URLs from the Google result pages we downloaded: 
 
 {% highlight bash %}
-grep '"http://data.taipei.gov.tw.*?"' download.txt -o -P | sed 's/"//g' | sort | 
-    uniq > download-clean.txt  
+grep '"http://data.taipei.gov.tw.*?"' download.txt -o -P | sed 's/"//g' | sort | uniq > download-clean.txt  
 {% endhighlight %}
 
 Now we can use wget to retrieve the dataset URLs: 
