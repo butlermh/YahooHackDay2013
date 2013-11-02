@@ -54,6 +54,13 @@ Now we can use wget to retrieve the dataset URLs:
 wget -k -r -N -l 1 -nc --no-remove-listing -i download-clean.txt   
 {% endhighlight %}
 
-Note we use nc no clobber to avoid downloading resources twice and set the `l` recursion parameter to 1 so we just get the linked dataset. Once we have done this then the `cloud.culture.tw` data is stored in 
-`cloud.culture.tw/frontsite/trans` in Excel, [XML](http://en.wikipedia.org/wiki/XML) and [JSON](http://en.wikipedia.org/wiki/JSON) format while for `data.taipei.gov.tw` it is in `data.taipei.gov.tw/opendata/apply`. Here the file directory contains [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) or [shapefile](http://en.wikipedia.org/wiki/Shapefile) data in zip format while the json and query directories contain JSON data.
+Note we use nc no clobber to avoid downloading resources twice and set the `l` recursion parameter to 1 so we just get the linked dataset. Once we have done this then the Excel, [XML](http://en.wikipedia.org/wiki/XML) and [JSON](http://en.wikipedia.org/wiki/JSON) data from `cloud.culture.tw`  is stored in
+ 
+    cloud.culture.tw/frontsite/trans
+
+The data from `data.taipei.gov.tw` is stored in
+
+    data.taipei.gov.tw/opendata/apply 
+
+Here the file directory contains [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) or [shapefile](http://en.wikipedia.org/wiki/Shapefile) data in zip format while the `json` and `query` directories contain JSON data.
 
