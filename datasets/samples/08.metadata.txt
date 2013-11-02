@@ -1,0 +1,25 @@
+臺北市停車場資訊
+
+分類及編號：交通及通訊
+資料集描述：停車場資訊
+主要欄位說明：停車場資訊名稱、地址、總車位、總機車位、經緯度
+資料集類型： Service 
+檔案格式：Json
+資料介接：http://www.api.cloud.taipei.gov.tw/CSCP_API/trf/pli
+新版資料介接：http://data.taipei.gov.tw/opendata/apply/query/QzhBMEJFOTctMEEzRC00M0Q2LThDNDktNDVCNDc3NDNDRDBC?$format=json
+API說明文件：http://data.taipei.gov.tw/opendata/apply/sigDoc/trf-pli
+最後更新時間：2013/10/31
+資料集提供機關：臺北市停車管理工程處
+
+Taipei Parking Information
+
+Classification and Code: Transport and communications 
+data set description: Parking Information 
+Major Field Description: Parking information name, address, the total parking spaces, parking attendant, longitude and latitude 
+data set types: Service 
+File Format: Json 
+data interfacing: http://www. api.cloud.taipei.gov.tw / CSCP_API / trf / pli
+new data interfacing: http://data.taipei.gov.tw/opendata/apply/query/QzhBMEJFOTctMEEzRC00M0Q2LThDNDktNDVCNDc3NDNDRDBC? $ format = JSON
+API Documentation: HTTP: / / data.taipei.gov.tw / opendata / apply / sigDoc / trf-pli
+Last Updated: 2013/10/31 
+dataset provides: Taipei City Parking Management Office

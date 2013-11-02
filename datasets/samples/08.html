@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Displaying a remote JSON DataSource in a DataTable</title>
+<body class="yui3-skin-sam">
+
+<h1>臺北市停車場資訊</h1>
+
+<pre>
+分類及編號：交通及通訊
+資料集描述：停車場資訊
+主要欄位說明：停車場資訊名稱、地址、總車位、總機車位、經緯度
+資料集類型： Service 
+檔案格式：Json
+資料介接：http://www.api.cloud.taipei.gov.tw/CSCP_API/trf/pli
+新版資料介接：http://data.taipei.gov.tw/opendata/apply/query/QzhBMEJFOTctMEEzRC00M0Q2LThDNDktNDVCNDc3NDNDRDBC?$format=json
+API說明文件：http://data.taipei.gov.tw/opendata/apply/sigDoc/trf-pli
+最後更新時間：2013/10/31
+資料集提供機關：臺北市停車管理工程處
+</pre>
+
+<h1>Taipei Parking Information</h1>
+
+<pre>
+Classification and Code: Transport and communications 
+data set description: Parking Information 
+Major Field Description: Parking information name, address, the total parking spaces, parking attendant, longitude and latitude 
+data set types: Service 
+File Format: Json 
+data interfacing: http://www. api.cloud.taipei.gov.tw / CSCP_API / trf / pli
+new data interfacing: http://data.taipei.gov.tw/opendata/apply/query/QzhBMEJFOTctMEEzRC00M0Q2LThDNDktNDVCNDc3NDNDRDBC? $ format = JSON
+API Documentation: HTTP: / / data.taipei.gov.tw / opendata / apply / sigDoc / trf-pli
+Last Updated: 2013/10/31 
+dataset provides: Taipei City Parking Management Office
+</pre>
+
+<div id="datatable"></div>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('datatable', 'datasource-get', 'datasource-io', 'datasource-jsonschema', function (Y) {
+        var src = new Y.DataSource.IO({
+            source: '08.json'
+        });
+        src.plug(Y.Plugin.DataSourceJSONSchema, {
+            schema: {
+            resultListLocator: "",
+            resultFields: [
+        {key: "id"},
+        {key: "area"},
+        {key: "name"}, 
+        {key: "type"},
+        {key: "summary"},
+        {key: "address"},
+        {key: "tel"}, 
+        {key: "payex"}, 
+        {key: "totalCar"}, 
+        {key: "availableCar"}, 
+        {key: "misscount_Car"}, 
+        {key: "totalMotor"}, 
+        {key: "availableMotor"}, 
+        {key: "misscount_Motor"}, 
+        {key: "totalBike"}, 
+        {key: "serviceTime"}, 
+        {key: "tw97x"}, 
+        {key: "tw97y"}
+            ]
+            }
+        });
+        var table = new Y.DataTable({ columns: [
+        "id",
+        "area",
+        "name", 
+        "type",
+        "summary",
+        "address",
+        "tel", 
+        "payex", 
+        "totalCar", 
+        "availableCar", 
+        "misscount_Car", 
+        "totalMotor", 
+        "availableMotor", 
+        "misscount_Motor", 
+        "totalBike", 
+        "serviceTime", 
+        "tw97x", 
+        "tw97y"
+        ] 
+        });
+        table.plug(Y.Plugin.DataTableDataSource, { datasource: src });
+        table.render('#datatable');
+        table.datasource.load();
+    });
+</script>
+</body>
