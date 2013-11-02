@@ -34,6 +34,9 @@
   color: #996300;
   padding: .2em; }
 
+body > .caption {
+  margin-bottom: 2.5em; }
+
 .container {
   padding: 0;
   min-height: 20em; }
@@ -54,6 +57,7 @@
     background-color: #e3e3e3;
     cursor: pointer; }
   .container .menu .active {
+    font-weight: bold;
     border-left: 5px solid orange;
     background-color: #f2f2f2; }
   .container .main h3 {
@@ -68,7 +72,9 @@
       padding: 10px;
       min-height: 240px;
       border: 3px solid #ffffff;
-      background: #f0f0f0; }
+      background: #f0f0f0;
+      color: #d6d6d6;
+      font-size: 4em; }
     .container .main .gcontainer .s1 {
       min-width: 240px; }
     .container .main .gcontainer .s2 {

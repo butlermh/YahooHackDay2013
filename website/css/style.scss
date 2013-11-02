@@ -48,6 +48,10 @@ $jumbotron_color: lighten($main_color, 20%);
   padding: .2em;
 }
 
+body>.caption {
+  margin-bottom: 2.5em;
+}
+
 .container {
   @media (min-width: 1024px) { 
     width: 98%;
@@ -75,6 +79,7 @@ $jumbotron_color: lighten($main_color, 20%);
       cursor: pointer;
     }
     .active {
+      font-weight: bold;
       border-left: 5px solid $selected_color;
       background-color: lighten($menu_bg_color, 66%);
     }
@@ -93,6 +98,8 @@ $jumbotron_color: lighten($main_color, 20%);
         min-height: 240px;
         border: 3px solid #ffffff;
         background: lighten($menu_bg_color, 65%);
+        color: lighten($menu_bg_color, 55%);
+        font-size: 4em;
       }
       .s1 {
         min-width: 240px;
