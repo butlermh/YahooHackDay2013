@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title></title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,12 +18,21 @@
         $(document).on('click', '.menu li', function(e) {
           $('.menu li').removeClass('active');
           $(e.currentTarget).addClass('active');
+          $('body').animate({scrollTop: ($('a[name^='+$(e.currentTarget).attr('href')+']').position().top+$('.main').position().top-$('nav').height()-50)}, 150);
         });
         $(document).on('scroll', function() {
-          if ( $(this).scrollTop() > $('.main').position().top - $('nav').height() )
+
+          if ( $(this).scrollTop() > $('.main').position().top - $('nav').height() ) {
+            $('.top_caption').addClass('caption');
             $('.menu').css({'top': ($(this).scrollTop() - $('.main').position().top + $('nav').height() * 2)+'px'});
-          else
+          } else {
+            $('.top_caption').removeClass('caption');
             $('.menu').css({'top': $('nav').height()+'px'});
+          }
+
+          $(".main .gcontainer .item").each(function(index) {
+            $(this).delay(50*index).fadeIn(200);
+          });
         });
         $(document).scroll();
       });
@@ -38,14 +48,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">API Marketplace</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="http://opendata4hackdaytw2013.blogspot.tw/">Blog</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" role="search">
@@ -54,7 +64,7 @@
           </div>
         </form>
         <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User<b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">previa@gmail.com<b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#">Preferences</a></li>
           <li class="divider"></li>
@@ -63,25 +73,23 @@
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
+    <div class="top_caption"></div>
     </nav>
-    <div class="jumbotron"><h1>..</h1></div>
-    <div class="caption">blah blah blah</div>
+    <div class="jumbotron"><h1>API<br>Marketplace</h1></div>
+    <div class="caption"></div>
     <div class="container">
       <div class="row">
       </div>
       <div>
         <div class="col-md-2 menu">
           <ul class="list-unstyled">
-            <li>a1</li>
-            <li>a2</li>
-            <li>a3</li>
-            <li>a4</li>
-            <li>a5</li>
+            <li href="#newest">Most Recent</li>
+            <li href="#hotest">Most Popular</li>
           </ul>
         </div>
         <div class="col-md-10 main row">
           <div>
-            <h3>Newest</h3>
+            <h3>Most Recent</h3><a name="#newest"></a>
             <div class="gcontainer">
               <div class="item s2">1</div>
               <div class="item s1">2</div>
@@ -93,7 +101,7 @@
             </div>
           </div>
           <div>
-            <h3>Hotest</h3>
+            <h3>Most Popular</h3><a name="#hotest"></a>
             <div class="gcontainer">
               <div class="item s2">1</div>
               <div class="item s1">2</div>
@@ -106,11 +114,7 @@
       </div>
     </div>
     <div class="footer">
-      <div>vv</div>
-      <div>vv</div>
-      <div>vv</div>
-      <div>vv</div>
-      <div>vv</div>
+      <div class="text-right">&copy; Dream Chaser @ Yahoo! Hack Taiwan</div>
     </div>
   </body>
 </html>

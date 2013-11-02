@@ -1,27 +1,55 @@
-$main_color: #303030;
+$main_color: darken(orange, 40%);
+$menu_bg_color: #4a4a4a;
+$foot_bg_color: lighten(#4a4a4a, 65%);
 $selected_color: orange;
-$head_color: lighten(orange, 5%);
+$head_color: darken(orange, 5%);
+$jumbotron_color: lighten($main_color, 20%);
 
 .navbar {
   margin: 0;
-  background-color: lighten($main_color, 20%);
-  border-color:  lighten($main_color, 20%);
+  background-color: lighten($main_color, 10%);
+  border: 0;
+  li a:link, a:link {
+    color: darken(orange, 10%);
+  }
+  .navbar-inverse > .caret {
+    border-top-color: darken(orange, 10%);
+    border-bottom-color: darken(orange, 10%);
+  }
+}
+.navbar-inverse .navbar-nav>.dropdown>a .caret {
+  border-top-color: darken(orange, 10%);
+  border-bottom-color: darken(orange, 10%);
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
-  background-color: lighten($main_color, 40%);
+  background-color: lighten($main_color, 25%);
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+  background-color: lighten($main_color, 25%);
 }
 
 .jumbotron {
-  background-color: $main_color;
-  min-height: 300px;
+  h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+  }
+  background: $jumbotron_color url('../img/head.jpg');
+  background-position: 50% -150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 400px;
   margin: 0;
 }
 
 .caption {
-  background-color: $main_color;
-  color: #ffffff;
-  padding: .5em;
-  margin-bottom: 2em;
+  background-color: $jumbotron_color;
+  color: $jumbotron_color;
+  padding: .2em;
+}
+
+body>.caption {
+  margin-bottom: 2.5em;
 }
 
 .container {
@@ -47,12 +75,13 @@ $head_color: lighten(orange, 5%);
       border-left: 5px solid #ffffff;
     }
     li:hover {
-      background-color: lighten($main_color, 70%);
+      background-color: lighten($menu_bg_color, 60%);
       cursor: pointer;
     }
     .active {
+      font-weight: bold;
       border-left: 5px solid $selected_color;
-      background-color: lighten($main_color, 76%);
+      background-color: lighten($menu_bg_color, 66%);
     }
   }
 
@@ -62,11 +91,15 @@ $head_color: lighten(orange, 5%);
     }
     .gcontainer {
       .item {
+        display: none;
+        transition: apacity 1s ease;
         margin: 0px;
         padding: 10px;
         min-height: 240px;
         border: 3px solid #ffffff;
-        background: lighten($main_color, 75%);
+        background: lighten($menu_bg_color, 65%);
+        color: lighten($menu_bg_color, 55%);
+        font-size: 4em;
       }
       .s1 {
         min-width: 240px;
@@ -83,9 +116,9 @@ $head_color: lighten(orange, 5%);
 .footer {
   clear: both;
   margin-top: 5em;
-  background-color: lighten($main_color, 65%);
+  background-color: $foot_bg_color;
   min-height: 10em;
-  border-top: 1px solid lighten($main_color, 55%);
-  color: lighten($main_color, 40%);
+  border-top: 1px solid darken($foot_bg_color, 10%);
+  color: darken($foot_bg_color, 25%);
   padding: 1em 3em;
 }

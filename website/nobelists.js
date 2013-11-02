@@ -14,6 +14,7 @@
             "relationship" :          "alumni",
             "co-winner" :           "Samuel C.C. Ting",
             "relationship-detail" : "MIT S.B. 1952, Ph.D. 1956",
+            "latlng": "34.05332, -118.24498",
             "imageURL" :              "http://nobelprize.org/nobel_prizes/physics/laureates/1976/richter_thumb.jpg"
         },
         {   "type" :                  "Nobelist",
@@ -24,6 +25,7 @@
             "nobel-year" :          "2001",
             "relationship" :          "alumni",
             "relationship-detail" : "MIT Ph.D. 1966",
+            "latlng": "41.88414, -87.63238",
             "imageURL" :              "http://nobelprize.org/nobel_prizes/economics/laureates/2001/akerlof_thumb.jpg"
         }
     ]
