@@ -1,0 +1,25 @@
+臺北市公廁點位資訊
+
+分類及編號：生活安全及品質
+資料集描述：臺北市公廁點位資訊
+主要欄位說明：列表代碼、列表名稱、地址、內容、經度、緯度
+資料集類型： Service 
+檔案格式：其他
+資料介接：http://www.api.cloud.taipei.gov.tw/CSCP_API/les/ptl/area
+新版資料介接：http://data.taipei.gov.tw/opendata/apply/query/NTQ4QTg2RjMtQjg0NC00REIxLUFCMUMtMzBGNTE5RTdCRUY3?$format=json
+API說明文件：http://data.taipei.gov.tw/opendata/apply/sigDoc/les-ptl
+最後更新時間：2012/12/28
+資料集提供機關：臺北市政府環境保護局
+
+Taipei toilets point information
+
+Category and number: the safety and quality of life 
+data sets Description: Taipei toilets point information 
+Main Field Description: List code, list name, address, contents, longitude, latitude 
+data set types: Service 
+File Format: Other 
+Information interfacing: HTTP :/ / www.api.cloud.taipei.gov.tw / CSCP_API / les / ptl / area
+new data interfacing: http://data.taipei.gov.tw/opendata/apply/query/NTQ4QTg2RjMtQjg0NC00REIxLUFCMUMtMzBGNTE5RTdCRUY3? $ format = JSON
+API Documentation: http://data.taipei.gov.tw/opendata/apply/sigDoc/les-ptl
+Last Updated: 2012/12/28 
+dataset provides: Department of Environmental Protection Agency
