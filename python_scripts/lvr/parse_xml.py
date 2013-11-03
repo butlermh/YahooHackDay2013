@@ -24,7 +24,7 @@ def main(args):
     for filename in onlyfiles:
         if "A_lvr_land_A.XML" not in filename: continue
         #print filename
-        result_list.append(get_data_from_file(filename))
+        result_list.extend(get_data_from_file(filename))
     #print result_list
     result = {}
     result["items"] = result_list
