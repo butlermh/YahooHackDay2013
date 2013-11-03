@@ -7,6 +7,7 @@ import sys
 import json
 from optparse import OptionParser
 
+
 def convert_tw97_to_wgs(x, y):
     out = {'status':False}
     lat = None
@@ -45,6 +46,8 @@ def main():
                       dest="latitude")
     parser.add_option("-t", "--type",
                       dest="data_type")
+    parser.add_option("-l", "--label",
+                      dest="data_label")
     parser.add_option("-c", "--convert", action="store_true",
                       default=False, dest="convert")
     (options, args) = parser.parse_args()
@@ -70,6 +73,7 @@ def main():
             if(k==options.longitude):
                continue
             tmp_dict[k] = my_dict[k]
+
         if options.convert:
             new_latlng_dict = convert_tw97_to_wgs(my_dict[options.latitude], my_dict[options.longitude])
             lat, log = str(new_latlng_dict['lat']) , str(new_latlng_dict['lng'])
@@ -80,7 +84,8 @@ def main():
         lat, log = check_lat_lng(lat, log)
         new_latlng = lat + "," + log
         tmp_dict["latlng"] = new_latlng
-        tmp_dict["openhack_type"] = options.data_type
+        tmp_dict["type"] = options.data_type
+        #tmp_dict["label"] = options.data_label
         #print tmp_dict
         if new_latlng in filter_same_latlng:
             pass
@@ -93,4 +98,4 @@ def main():
     print result_2.encode('utf-8')
 
 if __name__ == "__main__":
-    main() 
+    main()
