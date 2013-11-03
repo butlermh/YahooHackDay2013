@@ -40,11 +40,11 @@
         });
 
         $(document).on('mouseleave', '.item', function() {
-          $(this).find('div').fadeIn();
+          $(this).find('div').css({'background-color':'rgba(0,0,0,.3)'});
         });
 
         $(document).on('mouseenter', '.item', function() {
-          $(this).find('div').fadeOut();
+          $(this).find('div').css({'background-color':'rgba(0,0,0,0)'});
         });
 
         $(document).scroll();
@@ -105,31 +105,25 @@
           <div>
             <a name="#newest"></a><h3>Most Recent</h3>
             <div class="gcontainer">
-              <div class="item s1" style="background-image: url('../img/parking.jpg');"><div link="parking.html">臺北市停車場資訊</div></div>
               <div class="item s1" style="background-image: url('../img/restroom.jpg');"><div link="public_toilets.html">臺北市公廁點位資訊</div></div>
-              <div class="item s1" style="background-image: url('../img/tree.jpg');"><div link="tree.html">臺北市保護樹木</div></div>
               <div class="item s1" style="background-image: url('../img/travel.jpg');"><div link="tw_travel_poi.html">臺北市臺北旅遊網-景點資料</div></div>
-              <div class="item s1" style="background-image: url('../img/park.jpg');"><div link="park.html">臺北市休閒城市公園</div></div>
-              <div class="item s1" style="background-image: url('../img/market.jpg');"><div link="market.html">臺北市市場</div></div>
-              <div class="item s1" style="background-image: url('../img/chopstick.jpg');"><div link="chopstick.html">臺北市自備餐具享優惠</div></div>
-              <div class="item s2" style="background-image: url('../img/hotel.jpg');"><div link="hotel.html">臺北市-OK認證-旅館業</div></div>
-              <div class="item s2" style="background-image: url('../img/traffic.jpg');"><div link="#"></div></div>
+              <div class="item s2" style="background-image: url('../img/house_buy.jpg');"><div link="house_buy.html">臺北市實價登錄</div></div>
               <div class="item s1" style="background-image: url('../img/wifi.jpg');"><div link="wifi.html">臺北市公眾區免費無線上網熱點</div></div>
+              <div class="item s1" style="background-image: url('../img/parking.jpg');"><div link="parking_lot.html">臺北市停車場資訊</div></div>
+              <div class="item s2" style="background-image: url('../img/hotel.jpg');"><div link="hotel.html">臺北市-OK認證-旅館業</div></div>
+              <div class="item s1" style="background-image: url('../img/park.jpg');"><div link="park.html">臺北市休閒城市公園</div></div>
             </div>
           </div>
           <div>
             <a name="#hotest"></a><h3>Most Popular</h3>
             <div class="gcontainer">
               <div class="item s1" style="background-image: url('../img/wifi.jpg');"><div link="wifi.html">臺北市公眾區免費無線上網熱點</div></div>
-              <div class="item s1" style="background-image: url('../img/parking.jpg');"><div link="parking.html">臺北市停車場資訊</div></div>
+              <div class="item s1" style="background-image: url('../img/parking.jpg');"><div link="parking_lot.html">臺北市停車場資訊</div></div>
               <div class="item s1" style="background-image: url('../img/restroom.jpg');"><div link="public_toilets.html">臺北市公廁點位資訊</div></div>
               <div class="item s2" style="background-image: url('../img/hotel.jpg');"><div link="hotel.html">臺北市-OK認證-旅館業</div></div>
-              <div class="item s1" style="background-image: url('../img/tree.jpg');"><div link="tree.html">臺北市保護樹木</div></div>
-              <div class="item s1" style="background-image: url('../img/chopstick.jpg');"><div link="chopstick.html">臺北市自備餐具享優惠</div></div>
               <div class="item s1" style="background-image: url('../img/travel.jpg');"><div link="tw_travel_poi.html">臺北市臺北旅遊網-景點資料</div></div>
+              <div class="item s2" style="background-image: url('../img/house_buy.jpg');"><div link="house_buy.html">臺北市實價登錄</div></div>
               <div class="item s1" style="background-image: url('../img/park.jpg');"><div link="park.html">臺北市休閒城市公園</div></div>
-              <div class="item s1" style="background-image: url('../img/market.jpg');"><div link="market.html">臺北市市場</div></div>
-              <div class="item s2" style="background-image: url('../img/traffic.jpg');"><div link="#"></div></div>
             </div>
           </div>
         </div>
