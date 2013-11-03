@@ -2,8 +2,10 @@
   margin: 0;
   background-color: #664200;
   border: 0; }
-  .navbar li a:link, .navbar a:link, .navbar li a:visited {
-    color: #cc8400; }
+  .navbar a:link, .navbar a:visited {
+    color: #ffffff; }
+  .navbar li a:link, .navbar li a:visited {
+    color: #ffb733; }
   .navbar .navbar-inverse > .caret {
     border-top-color: #cc8400;
     border-bottom-color: #cc8400; }
@@ -13,7 +15,7 @@
   border-bottom-color: #cc8400; }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-  background-color: #b37300; }
+  background-color: #e69500; }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
   background-color: #b37300; }
@@ -61,7 +63,8 @@ body > .caption {
     border-left: 5px solid orange;
     background-color: #f2f2f2; }
   .container .main h3 {
-    color: #e69500; }
+    color: #e69500;
+    margin-bottom: 1em; }
   .container .main .gcontainer {
     margin-bottom: 7em;
     margin-left: 1em; }

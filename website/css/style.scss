@@ -9,8 +9,12 @@ $jumbotron_color: lighten($main_color, 20%);
   margin: 0;
   background-color: lighten($main_color, 10%);
   border: 0;
-  li a:link, a:link, li a:visited {
-    color: darken(orange, 10%);
+  a:link, a:visited {
+    color: #ffffff;
+  }
+
+  li a:link, li a:visited {
+    color: lighten(orange, 10%);
   }
   .navbar-inverse > .caret {
     border-top-color: darken(orange, 10%);
@@ -22,7 +26,7 @@ $jumbotron_color: lighten($main_color, 20%);
   border-bottom-color: darken(orange, 10%);
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
-  background-color: lighten($main_color, 25%);
+  background-color: lighten($main_color, 35%);
 }
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
@@ -88,6 +92,7 @@ body>.caption {
   .main {
     h3 {
       color: $head_color;
+      margin-bottom: 1em;
     }
     .gcontainer {
       .item {
