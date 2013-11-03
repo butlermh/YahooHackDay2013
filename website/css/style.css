@@ -2,7 +2,7 @@
   margin: 0;
   background-color: #664200;
   border: 0; }
-  .navbar li a:link, .navbar a:link {
+  .navbar li a:link, .navbar a:link, .navbar li a:visited {
     color: #cc8400; }
   .navbar .navbar-inverse > .caret {
     border-top-color: #cc8400;
@@ -23,7 +23,7 @@
   background-position: 50% -150px;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 400px;
+  min-height: 500px;
   margin: 0; }
   .jumbotron h1 {
     color: #ffffff;
@@ -67,18 +67,27 @@ body > .caption {
     margin-left: 1em; }
     .container .main .gcontainer .item {
       display: none;
-      transition: apacity 1s ease;
-      margin: 0px;
-      padding: 10px;
       min-height: 240px;
       border: 3px solid #ffffff;
       background: #f0f0f0;
-      color: #d6d6d6;
-      font-size: 4em; }
+      color: #d6d6d6; }
+      .container .main .gcontainer .item div {
+        display: none;
+        padding: 10px;
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        min-height: 234px;
+        cursor: pointer; }
     .container .main .gcontainer .s1 {
-      min-width: 240px; }
+      min-width: 240px;
+      background-position: 50% 25%;
+      background-size: cover;
+      background-repeat: no-repeat; }
     .container .main .gcontainer .s2 {
-      min-width: 480px; }
+      min-width: 480px;
+      background-position: 50% 25%;
+      background-size: cover;
+      background-repeat: no-repeat; }
 
 .footer {
   clear: both;

@@ -18,22 +18,35 @@
         $(document).on('click', '.menu li', function(e) {
           $('.menu li').removeClass('active');
           $(e.currentTarget).addClass('active');
-          $('body').animate({scrollTop: ($('a[name^='+$(e.currentTarget).attr('href')+']').position().top+$('.main').position().top-$('nav').height()-50)}, 150);
+          $('body').animate({scrollTop: ($('a[name^='+$(e.currentTarget).attr('href')+']').position().top+$('.main').position().top-$('nav').height()-50)}, 200);
         });
         $(document).on('scroll', function() {
-
-          if ( $(this).scrollTop() > $('.main').position().top - $('nav').height() ) {
+          $('.jumbotron').css({'background-position-y': function() { return ($(document).scrollTop()/2-100)+'px'; } });
+          if ( $(this).scrollTop() > $('.main').position().top - 2*$('nav').height() ) {
             $('.top_caption').addClass('caption');
-            $('.menu').css({'top': ($(this).scrollTop() - $('.main').position().top + $('nav').height() * 2)+'px'});
+            $('.menu').css({'top': ($(this).scrollTop() - $('.main').position().top + $('nav').height() * 3)+'px'});
           } else {
             $('.top_caption').removeClass('caption');
             $('.menu').css({'top': $('nav').height()+'px'});
           }
-
-          $(".main .gcontainer .item").each(function(index) {
-            $(this).delay(50*index).fadeIn(200);
-          });
         });
+
+        $(".main .gcontainer .item").each(function(index) {
+          $(this).delay(50*index).fadeIn(200);
+        });
+
+        $(".main .gcontainer .item div").on('click', function() {
+          window.location = $(this).attr('link');
+        });
+
+        $(document).on('mouseleave', '.item', function() {
+          $(this).find('div').fadeOut();
+        });
+
+        $(document).on('mouseenter', '.item', function() {
+          $(this).find('div').fadeIn();
+        });
+
         $(document).scroll();
       });
     </script>
@@ -55,7 +68,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="http://opendata4hackdaytw2013.blogspot.tw/">Blog</a></li>
+        <li><a href="http://yahoo.clouduct.com:4000/">Blog</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" role="search">
@@ -91,23 +104,31 @@
           <div>
             <h3>Most Recent</h3><a name="#newest"></a>
             <div class="gcontainer">
-              <div class="item s2">1</div>
-              <div class="item s1">2</div>
-              <div class="item s1">3</div>
-              <div class="item s1">4</div>
-              <div class="item s1">5</div>
-              <div class="item s1">6</div>
-              <div class="item s2">7</div>
+              <div class="item s2" style="background-image: url('../img/traffic.jpg');"><div></div></div>
+              <div class="item s1" style="background-image: url('../img/wifi.jpg');"><div>臺北市公眾區免費無線上網熱點</div></div>
+              <div class="item s1" style="background-image: url('../img/travel.jpg');"><div>臺北市臺北旅遊網-景點資料</div></div>
+              <div class="item s1" style="background-image: url('../img/parking.jpg');"><div>臺北市停車場資訊</div></div>
+              <div class="item s1" style="background-image: url('../img/park.jpg');"><div>臺北市休閒城市公園</div></div>
+              <div class="item s1" style="background-image: url('../img/restroom.jpg');"><div>臺北市公廁點位資訊</div></div>
+              <div class="item s2" style="background-image: url('../img/hotel.jpg');"><div>臺北市-OK認證-旅館業</div></div>
+              <div class="item s1" style="background-image: url('../img/tree.jpg');"><div>臺北市保護樹木</div></div>
+              <div class="item s1" style="background-image: url('../img/chopstick.jpg');"><div>臺北市自備餐具享優惠</div></div>
+              <div class="item s1" style="background-image: url('../img/market.jpg');"><div>臺北市市場</div></div>
             </div>
           </div>
           <div>
             <h3>Most Popular</h3><a name="#hotest"></a>
             <div class="gcontainer">
-              <div class="item s2">1</div>
-              <div class="item s1">2</div>
-              <div class="item s1">3</div>
-              <div class="item s1">4</div>
-              <div class="item s1">5</div>
+              <div class="item s1" style="background-image: url('../img/wifi.jpg');"><div link="wifi.html">臺北市公眾區免費無線上網熱點</div></div>
+              <div class="item s1" style="background-image: url('../img/parking.jpg');"><div link="parking.html">臺北市停車場資訊</div></div>
+              <div class="item s1" style="background-image: url('../img/restroom.jpg');"><div link="public_toilets.html">臺北市公廁點位資訊</div></div>
+              <div class="item s2" style="background-image: url('../img/hotel.jpg');"><div link="hotel.html">臺北市-OK認證-旅館業</div></div>
+              <div class="item s1" style="background-image: url('../img/tree.jpg');"><div link="tree.html">臺北市保護樹木</div></div>
+              <div class="item s1" style="background-image: url('../img/chopstick.jpg');"><div link="chopstick.html">臺北市自備餐具享優惠</div></div>
+              <div class="item s1" style="background-image: url('../img/travel.jpg');"><div link="tw_travel_poi.html">臺北市臺北旅遊網-景點資料</div></div>
+              <div class="item s1" style="background-image: url('../img/park.jpg');"><div link="park.html">臺北市休閒城市公園</div></div>
+              <div class="item s1" style="background-image: url('../img/market.jpg');"><div link="market.html">臺北市市場</div></div>
+              <div class="item s2" style="background-image: url('../img/traffic.jpg');"><div link="#"></div></div>
             </div>
           </div>
         </div>

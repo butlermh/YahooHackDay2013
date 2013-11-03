@@ -9,7 +9,7 @@ $jumbotron_color: lighten($main_color, 20%);
   margin: 0;
   background-color: lighten($main_color, 10%);
   border: 0;
-  li a:link, a:link {
+  li a:link, a:link, li a:visited {
     color: darken(orange, 10%);
   }
   .navbar-inverse > .caret {
@@ -38,7 +38,7 @@ $jumbotron_color: lighten($main_color, 20%);
   background-position: 50% -150px;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 400px;
+  min-height: 500px;
   margin: 0;
 }
 
@@ -91,21 +91,31 @@ body>.caption {
     }
     .gcontainer {
       .item {
+        div {
+          display: none;
+          padding: 10px;
+          margin: 0;
+          background-color: rgba(0, 0, 0, .5);
+          min-height: 234px;
+          cursor: pointer;
+        }
         display: none;
-        transition: apacity 1s ease;
-        margin: 0px;
-        padding: 10px;
         min-height: 240px;
         border: 3px solid #ffffff;
         background: lighten($menu_bg_color, 65%);
         color: lighten($menu_bg_color, 55%);
-        font-size: 4em;
       }
       .s1 {
         min-width: 240px;
+        background-position: 50% 25%;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       .s2 {
         min-width: 480px;
+        background-position: 50% 25%;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       margin-bottom: 7em;
       margin-left: 1em;
