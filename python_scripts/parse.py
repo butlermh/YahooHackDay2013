@@ -72,6 +72,8 @@ def main():
                continue
             if(k==options.longitude):
                continue
+            if(k=="id"):
+               continue
             tmp_dict[k] = my_dict[k]
 
         if options.convert:
